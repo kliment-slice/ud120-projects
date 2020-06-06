@@ -17,6 +17,12 @@
 
 import pickle
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
+enron_data = pickle.load((open("../final_project/final_project_dataset_unix.pkl", "rb")),fix_imports=True)
+keys_list = list(enron_data)
+values = enron_data.values()
+values_list = list(values)
 
-
+ct = 0
+for val in range(len(values_list)):
+    if values_list[val]["poi"] == True :
+        ct += 1
