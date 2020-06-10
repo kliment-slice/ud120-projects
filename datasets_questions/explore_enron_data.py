@@ -22,7 +22,8 @@ keys_list = list(enron_data)
 values = enron_data.values()
 values_list = list(values)
 
-ct = 0
+import numpy as np
+ct2 = 0
 for val in range(len(values_list)):
-    if values_list[val]["poi"] == True :
-        ct += 1
+    if values_list[val]["email_address"] == 'NaN' :
+        ct2 += 1
