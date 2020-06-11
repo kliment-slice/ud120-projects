@@ -82,3 +82,9 @@ if len(cleaned_data) > 0:
 else:
     print("outlierCleaner() is returning an empty list, no refitting to be done")
 
+import numpy as np
+from sklearn.linear_model import LinearRegression
+reg = LinearRegression()
+reg.fit(ages_train, net_worths_train)
+reg.fit(np.array(cleaned_data[0]), np.array(cleaned_data[1]))
+reg.coef_
