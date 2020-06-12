@@ -24,6 +24,10 @@ values_list = list(values)
 
 import numpy as np
 ct2 = 0
+sal = []
 for val in range(len(values_list)):
-    if values_list[val]["email_address"] == 'NaN' :
-        ct2 += 1
+    sal.append(values_list[val]["salary"])
+
+for v in range(len(sal)):
+    if type(sal[v]) is str:
+        sal.pop(v)
